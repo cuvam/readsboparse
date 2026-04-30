@@ -43,4 +43,4 @@ for hex_id, meta, pt in rp.scan(filters):
 
 ## Don't have a feeder?
 
-If you don't have a feeder to provide you with globe_history data, I suggest [ADSB.lol](https://www.adsb.lol/docs/open-data/historical/)'s archive. Download a .tar of a day's feed, extract, point TRACE_ROOT at it, and you can sift through a lot of data.
+If you don't have a feeder to provide you with globe_history data, [adsb.lol](https://www.adsb.lol/docs/open-data/historical/) publishes daily community-collected archives. Download a .tar of a day's feed, extract, point TRACE_ROOT at it, and you can sift through a lot of data.
