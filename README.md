@@ -10,7 +10,7 @@ Requires readsb's globe_history data archival to be enabled. You may need to wai
 ```
 Then `sudo systemctl restart readsb`.
 
-Important note: globe_history will get very large over time, as it tracks all aircraft while the option is enabled. Manage your storage accordingly. Scripts like `furthest.py` in the examples will also take a while, because they have to open and read thousands of files (this scales linearly and is the biggest bottleneck). My slightly outdated gaming laptop took ~20 seconds for ~a week of files. 
+Important note: globe_history will get very large over time, as it tracks all aircraft while the option is enabled. Manage your storage accordingly. Scripts like `furthest.py`, which iterate through all the data in each trace file, will take a while, because they have to open and read the entirety of thousands of files (this scales linearly and is the biggest bottleneck). My slightly outdated gaming laptop took ~20 seconds for ~a week of files. 
 
 This is an independent hobby project. Not affiliated with or endorsed by readsb or its creators.
 
