@@ -1,3 +1,7 @@
+"""
+NOTE: This script uses tar1090's hex-to-country conversion table (flags.js). It will not work if tar1090 is not installed.
+"""
+
 import json, glob, os, gzip, re, bisect
 from collections import Counter
 import sys
@@ -9,7 +13,7 @@ if len(sys.argv) > 1:
 
 GLOBE_HISTORY = '/var/globe_history'
 FLAGS_JS = '/usr/local/share/tar1090/html/flags_93f40979ff2fc40a098d7983c0101a66.js'  # adjust if your tar1090 flags.json lives elsewhere
-                                                                                      # (the filename often has a hash interjected in it, like flags_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.json)
+                                                                                      # (the filename often has a hash interjected in it, like flags_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.js)
 
 # Parse tar1090's ICAO range → country table once.
 def load_icao_ranges():
