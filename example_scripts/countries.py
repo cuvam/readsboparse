@@ -61,7 +61,9 @@ for icao in icaos:
 print(f"Unique aircraft: {len(icaos)}")
 print(f"Unique countries: {len(countries)}")
 print(f'Unknowns: {unknown}')
-synthetic = sum(1 for icao in icaos if icao.startswith('~'))
+# hexes captured with TIS-B/ADS-R (prepended with '~') can't be used to discern country of origin, are labeled "synthetic unknowns"
+# hexes labeled "genuine unknowns" are non-tilde-prepended hexes that aren't known to the hex conversion table
+synthetic = sum(1 for icao in icaos if icao.startswith('~')) 
 real_unknown = unknown - synthetic
 print(f" - Synthetic (TIS-B/ADS-R): {synthetic}")
 print(f" - Genuine unknowns: {real_unknown}")
