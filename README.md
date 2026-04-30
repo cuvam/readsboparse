@@ -10,7 +10,7 @@ Requires readsb's globe_history data archival to be enabled. You may need to wai
 ```
 Then `sudo systemctl restart readsb`.
 
-Important note: globe_history will get very large over time, as it tracks all aircraft while the option is enabled. Manage your storage accordingly.
+Important note: globe_history will get very large over time, as it tracks all aircraft while the option is enabled. Manage your storage accordingly. Scripts like `furthest.py` in the examples will also take a while, because they have to open and read thousands of files (this scales linearly and is the biggest bottleneck). My slightly outdated gaming laptop took ~20 seconds for ~a week of files. 
 
 This is an independent hobby project. Not affiliated with or endorsed by readsb or its creators.
 
@@ -40,3 +40,7 @@ filters = [
 for hex_id, meta, pt in rp.scan(filters):
     print(hex_id, pt["lat"], pt["lon"], pt["baro_alt"])
 ```
+
+## Don't have a feeder?
+
+If you don't have a feeder to provide you with globe_history data, [adsb.lol](https://www.adsb.lol/docs/open-data/historical/) publishes daily community-collected archives. Download a .tar of a day's feed, extract, point TRACE_ROOT at it, and you can sift through a lot of data.

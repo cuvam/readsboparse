@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""List unique military aircraft in globe_history, using ranges.json."""
+"""List unique military aircraft in globe_history, using ranges.json from tar1090. Will not work if tar1090 is not installed."""
 
 import gzip
 import json
