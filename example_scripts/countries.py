@@ -66,7 +66,7 @@ print(f'Unknowns: {unknown}')
 synthetic = sum(1 for icao in icaos if icao.startswith('~')) 
 real_unknown = unknown - synthetic
 print(f" - Synthetic (TIS-B/ADS-R): {synthetic}")
-print(f" - Genuine unknowns: {real_unknown}")
+print(f" - Genuine: {real_unknown}")
 print(f"\nCountries by aircraft count:" if not PRINT_MAX else f"Top {PRINT_MAX} countries by aircraft count:")
 for country, count in countries.most_common()[:PRINT_MAX]:
     print(f"  {count:>5}  {country}")
