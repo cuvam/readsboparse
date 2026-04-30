@@ -4,6 +4,14 @@
 
 A framework for aggregating, filtering, and displaying archived globe_history data produced by [readsb](https://github.com/wiedehopf/readsb).
 
+Requires readsb's globe_history data archival to be enabled. You may need to wait a few hours after enabling it to start aggregating its data. Enable it by adding this argument to `/etc/default/readsb`'s `JSON_OPTIONS` line:
+```
+--write-globe-history=/var/globe_history
+```
+Then `sudo systemctl restart readsb`.
+
+Important note: globe_history will get very large over time, as it tracks all aircraft while the option is enabled. Manage your storage accordingly.
+
 This is an independent hobby project. Not affiliated with or endorsed by readsb or its creators.
 
 ## Example scripts
