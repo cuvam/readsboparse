@@ -58,9 +58,6 @@ for icao in icaos:
     else:
         unknown += 1
 
-print(f"Unique aircraft: {len(icaos)}")
-print(f"Unique countries: {len(countries)}")
-print(f'Unknowns: {unknown}')
 # hexes captured with TIS-B/ADS-R (prepended with '~') can't be used to discern country of origin, are labeled "synthetic unknowns"
 # hexes labeled "genuine unknowns" are non-tilde-prepended hexes that aren't known to the hex conversion table
 
@@ -68,9 +65,12 @@ print(f'Unknowns: {unknown}')
 # the real ICAO addresses of the aircraft. these pseudo addresses are scoped to a single track in the FAA's TIS-B system -- typically 
 # the duration of one flight. the same physical aircraft on a different flight will likely receive a different pseudo address, and pseudo 
 # addresses can be reused across different aircraft over time. the "synthetic" count therefore represents unique (pseudo-address, track) 
-# pairs in the archive, NOT a count of unique physical aircraft.
+# pairs in the archive, NOT a count of unique physical aircraft, which is why it is excluded from the "unique aircraft" count.
 synthetic = sum(1 for icao in icaos if icao.startswith('~')) 
 real_unknown = unknown - synthetic
+print(f"Unique aircraft: {len(icaos)-synthetic}")
+print(f"Unique countries: {len(countries)}")
+print(f'Unknowns: {unknown}')
 print(f" - Synthetic (TIS-B/ADS-R): {synthetic}")
 print(f" - Genuine: {real_unknown}")
 print(f"\nCountries by aircraft count:" if not PRINT_MAX else f"Top {PRINT_MAX} countries by aircraft count:")
