@@ -20,6 +20,7 @@ This is an independent hobby project. Not affiliated with or endorsed by readsb 
 * `furthest.py`: Furthest captured aircraft
 * `military.py`: Captured military aircraft
 * `regulars.py`: Aircraft seen on the highest number of distinct days
+* `airframes.py`: Most frequently seen airframes (model of aircraft)
 * `fastest.py`: The fastest captured aircraft
 * `furthest_norm.py`: Furthest aircraft normalized by geometric horizon at the aircraft's position. Only really useful as a diagnostic.
 * `messages.py`: Highest number of messages received from unique aircraft
