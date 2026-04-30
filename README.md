@@ -2,7 +2,7 @@
 
 *readsb output parser*
 
-A framework for aggregating, filtering and displaying archived globe_history data produced by [readsb](https://github.com/wiedehopf/readsb).
+A framework for aggregating, filtering, and displaying archived globe_history data produced by [readsb](https://github.com/wiedehopf/readsb).
 
 This is an independent hobby project. Not affiliated with or endorsed by readsb or its creators.
 
