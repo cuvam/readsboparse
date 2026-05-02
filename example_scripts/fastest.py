@@ -17,7 +17,7 @@ def main():
         if not isinstance(gs, (int, float)):
             continue
         cur = best_per_ac.get(hex_id)
-        if gs < 900 and (cur is None or gs > cur[0]):
+        if gs < 900 and (cur is None or gs > cur[0]): # also sanity checks groundspeed since it's apparently a value that can be corrupted and display as thousands of knots
             best_per_ac[hex_id] = (gs, pt["baro_alt"], meta, pt)
 
     ranked = sorted(best_per_ac.items(), key=lambda kv: kv[1][0], reverse=True)
